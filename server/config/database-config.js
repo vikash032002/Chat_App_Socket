@@ -1,7 +1,7 @@
 const mongoose =require('mongoose');
-
+require('dotenv').config();
 const connect=async ()=>{
-    await mongoose.connect("mongodb+srv://vikuvikash03:chatapp@cluster0.lpubclt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect(process.env.MONGO_URI);
 }
 
 module.exports= connect;
